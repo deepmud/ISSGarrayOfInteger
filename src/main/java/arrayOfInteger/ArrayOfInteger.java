@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class ArrayOfInteger {
 
     public int returnMinimunInteger(){
-        int[] n = {8,1,2,7,3,5,6};
-        int[] s = new int[7];
+        int[] n = {8,1,2,7,3,5,6,10};
+        int[] s = new int[8];
         Arrays.sort(n);
         for(int i=0;i < 7;i++) {
             s[i] = i + 1;

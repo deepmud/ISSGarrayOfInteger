@@ -16,20 +16,19 @@ public class ArrayOfIntegerTests {
     @Test
     void returnMinimunIn(){
         ArrayOfInteger arrayOfInteger = new ArrayOfInteger();
-        Assertions.assertEquals(4,returnMinimunInte(50),"ALL INTEGER WHERE " +
+        Assertions.assertEquals(4,returnMinimunInte(6),"ALL INTEGER WHERE " +
                 "PRESENT IN THE " +
                 "ARRAY");
     }
 
     public int returnMinimunInte(int b){
-        double[] x = new double[b] ;
+
         int[] n = new int[b];
-        long g;
+
         int[] s = new int[b];
         for(int i=0;i < b;i++) {
-            x[i] = Math.random();
-            g = Math.round(x[i]);
-            System.out.print(g + ", ");
+            n[i] = ((int)(Math.random()*10)) + 1;
+            System.out.print(n[i] + ", ");
         }
         Arrays.sort(n);
         for(int i=0;i < b;i++) {
