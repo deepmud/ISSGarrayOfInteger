@@ -4,9 +4,6 @@ import java.util.Arrays;
 
 public class ArrayOfInteger {
 
-    int N;
-    Integer[] integer = new Integer[N];
-
     public int returnMinimunInteger(){
         int[] n = {8,1,2,7,3,5,6};
         int[] s = new int[7];
