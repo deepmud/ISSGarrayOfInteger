@@ -27,7 +27,7 @@ public class ArrayOfIntegerTests {
 
         int[] s = new int[b];
         for(int i=0;i < b;i++) {
-            n[i] = ((int)(Math.random()*10)) + 1;
+            n[i] = ((int)(Math.random()*10)) + 1;// testing to put scanner to it
             System.out.print(n[i] + ", ");
         }
         Arrays.sort(n);
