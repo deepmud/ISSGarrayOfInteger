@@ -8,37 +8,55 @@ import java.util.Arrays;
 public class ArrayOfIntegerTests {
 
     @Test
-    void returnMinimunInt(){
+    void shouldreturnMinimumMissingInteger(){
         ArrayOfInteger arrayOfInteger = new ArrayOfInteger();
-        Assertions.assertEquals(4,arrayOfInteger.returnMinimunInteger());
+        Assertions.assertEquals(4,arrayOfInteger.returnMinimumMissingInteger());
     }
 
     @Test
-    void returnMinimunIn(){
+    void shouldreturnMinimumMissingIntegerInUserTestArray(){
         ArrayOfInteger arrayOfInteger = new ArrayOfInteger();
-        Assertions.assertEquals(4,returnMinimunInte(6),"ALL INTEGER WHERE " +
+        Assertions.assertEquals(4,workOutReturnMinimumMissingIntegerInUserTestArray
+                        (10),
+                "ALL INTEGER WHERE " +
                 "PRESENT IN THE " +
                 "ARRAY");
     }
 
-    public int returnMinimunInte(int b){
-
+    public int workOutReturnMinimumMissingIntegerInUserTestArray(int UserTestArrayIndex){
+        int b = UserTestArrayIndex - 1;
         int[] n = new int[b];
-
         int[] s = new int[b];
+        System.out.print("Your Unsorted testArray: ");
         for(int i=0;i < b;i++) {
-            n[i] = ((int)(Math.random()*10)) + 1;// testing to put scanner to it
+            n[i] = workOutGenerateRandomNumber_and_AvoidRepeatedNumberInArray(i,n);
             System.out.print(n[i] + ", ");
         }
         Arrays.sort(n);
-        for(int i=0;i < b;i++) {
+        System.out.println();
+        int m = workoutCheckMissingInteger(b,s,n) ;
+        return m;
+    }
+
+    public int workOutGenerateRandomNumber_and_AvoidRepeatedNumberInArray(int i, int[] n) {
+        int d = ((int) (Math.random() * 10)) + 1;
+        for(int k = i - 1;k >= 0;k--){
+            if(n[k] == d){
+                d = workOutGenerateRandomNumber_and_AvoidRepeatedNumberInArray(i,n);
+            }
+        }
+        return d;
+    }
+
+    public int workoutCheckMissingInteger(int b,int[] s,int[] n) {
+        for (int i = 0; i < b; i++) {
             s[i] = i + 1;
-            if(n[i]!=s[i]){
-                System.out.println(s[i]);
+            if (n[i] != s[i]) {
+                System.out.println("testArray do not have number:  " + s[i]);
                 return s[i];
             }
         }
-        int m = 0;
-        return m;
+        int bb = 0;
+        return bb;
     }
 }
